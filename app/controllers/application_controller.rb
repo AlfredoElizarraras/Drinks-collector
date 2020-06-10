@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(user)
-    return user_path(user)
+    user_path(user)
   end
 
-  def after_sign_out_path_for(resource_or_scope)
-    return root_path
+  def after_sign_out_path_for(_resource_or_scope)
+    root_path
   end
 end
