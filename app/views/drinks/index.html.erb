@@ -1,8 +1,7 @@
 <h1><%= @drinks_title %></h1>
 
-<% total = 0 %>
+<%= drinks_total %>
 <% @drinks.each do |drink| %>
-<% total += drink.amount.to_f %>
 <article>
   <h2>
     <%= drink.author.name %>
