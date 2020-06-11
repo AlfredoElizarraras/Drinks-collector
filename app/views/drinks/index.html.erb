@@ -1,0 +1,22 @@
+<h1><%= @drinks_title %></h1>
+
+<%= drinks_total %>
+<% @drinks.each do |drink| %>
+<article>
+  <%= show_icon(drink) %>
+  
+  <h2>
+    <%= drink.author.name %>
+  </h2>
+  <h3>
+    <%= drink.name %>
+  </h3>
+
+  <p>
+    <%= drink.amount %>
+    <%= drink.created_at %>
+  </p>
+
+</article>
+<% end %>
+<%= link_to  "Add new", 'javascript:void(0);' %>
