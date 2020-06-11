@@ -1,0 +1,9 @@
+<h1>All my groups</h1>
+<% @groups.each do |group| %>
+  <article>
+    <%= show_group_icon(group) %>
+    <h2><%= link_to group.name, group %></h2>
+    <p><%= group.created_at %></p>
+  </article>
+<% end %>
+<%= link_to  "Create new", 'javascript:void(0);' %>

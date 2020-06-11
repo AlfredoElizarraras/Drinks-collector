@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: %i[show]
   resources :drinks, only: %i[index]
+  resources :groups, only: %i[index show]
 end
