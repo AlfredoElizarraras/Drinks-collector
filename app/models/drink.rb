@@ -3,6 +3,8 @@
 class Drink < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :group, optional: true
+  validates :name, presence: true, length: { maximum: 30 }
+  validates :amount, presence: true
 
   scope :by_user, lambda { |author_id, grouped_ones = true|
     unless author_id.nil?
