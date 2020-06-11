@@ -7,7 +7,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :drinks, dependent: :destroy, foreign_key: :author_id
 
-  def sum_drinks
-    drinks.sum(:amount).to_f
+  def sum_drinks(grouped = true)
+    if grouped
+      drinks.where.not(group_id: nil).sum(:amount).to_f
+    else
+      drinks.where(group_id: nil).sum(:amount).to_f
+    end
   end
 end
