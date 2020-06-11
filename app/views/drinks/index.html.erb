@@ -3,6 +3,8 @@
 <%= drinks_total %>
 <% @drinks.each do |drink| %>
 <article>
+  <%= show_icon(drink) %>
+  
   <h2>
     <%= drink.author.name %>
   </h2>
