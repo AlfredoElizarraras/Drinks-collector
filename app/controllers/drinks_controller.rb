@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DrinksController < ApplicationController
   def index
     author = User.find(params[:author_id])

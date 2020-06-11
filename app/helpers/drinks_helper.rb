@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DrinksHelper
   def drinks_total
     total = 'You have to drink'
@@ -10,7 +12,7 @@ module DrinksHelper
 
   def show_icon(drink)
     if !drink.group.nil?
-      render html: image_tag(drink.group.icon) if !drink.group.icon.nil?
+      render html: image_tag(drink.group.icon) unless drink.group.icon.nil?
     else
       render html: image_tag('no_group.png')
     end
