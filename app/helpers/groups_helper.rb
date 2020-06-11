@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GroupsHelper
   def show_group_icon(group)
     if !group.nil?

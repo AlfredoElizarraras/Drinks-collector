@@ -1,8 +1,14 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   def index
     user = User.find(params[:user_id])
     show_groups?(user)
     @groups = Group.by_user(user.id)
+  end
+
+  def show
+    @group = Group.find(params[:id])
   end
 
   private
