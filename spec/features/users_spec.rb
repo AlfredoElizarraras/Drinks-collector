@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/BlockLength
+
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature 'Users', type: :feature do
   context 'Sign up for a new user:' do
     scenario 'should be succeful' do
       visit root_path
@@ -57,7 +61,7 @@ RSpec.feature "Users", type: :feature do
     before(:each) do
       u = User.create(name: 'User 1 test', email: 'user_1_test@mail.com', password: '123456')
       g = Group.create(name: 'Group test', user_id: u.id)
-      Drink.create(name: "Drink test", amount: 760, author_id: u.id, group_id: g.id)
+      Drink.create(name: 'Drink test', amount: 760, author_id: u.id, group_id: g.id)
       visit root_path
       within('form') do
         fill_in 'user_email', with: 'user_1_test@mail.com'
@@ -100,3 +104,4 @@ RSpec.feature "Users", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

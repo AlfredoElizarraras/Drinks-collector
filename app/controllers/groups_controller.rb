@@ -5,8 +5,10 @@ class GroupsController < ApplicationController
 
   def index
     return nil if redirect_to_user(false)
+
     user = User.find(params[:user_id])
     return nil if redirect_to_user(user)
+
     @groups = Group.by_user(user.id)
   end
 
@@ -35,9 +37,9 @@ class GroupsController < ApplicationController
   end
 
   def redirect_to_user(user = nil)
-    if user.nil? || params[:user_id].nil?
-      redirect_to user_path(current_user) 
-      return true
-    end
+    return unless user.nil? || params[:user_id].nil?
+
+    redirect_to user_path(current_user)
+    true
   end
 end

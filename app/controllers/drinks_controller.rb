@@ -5,8 +5,10 @@ class DrinksController < ApplicationController
 
   def index
     return nil if redirect_to_user(false)
+
     author = User.find_by_id(params[:author_id])
     return nil if redirect_to_user(author)
+
     which_drinks_show(params[:drink] == 'true', author)
   end
 
@@ -47,9 +49,9 @@ class DrinksController < ApplicationController
   end
 
   def redirect_to_user(author = nil)
-    if author.nil? || params[:author_id].nil?
-      redirect_to user_path(current_user) 
-      return true
-    end
+    return unless author.nil? || params[:author_id].nil?
+
+    redirect_to user_path(current_user)
+    true
   end
 end
