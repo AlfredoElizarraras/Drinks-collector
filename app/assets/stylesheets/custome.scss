@@ -1,0 +1,17 @@
+.navbar_custome {
+  background-color: #3778c2;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.785rem;
+  // margin-bottom: 0.785rem; 
+  h1 {
+    display: table-cell;
+    font-size: inherit;
+    color: inherit;
+    vertical-align: bottom;
+    margin: 0.785rem;
+  }
+  a {
+    color: inherit;
+  }
+}
