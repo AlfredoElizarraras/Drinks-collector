@@ -1,4 +1,4 @@
-<h1><%= @user.name %></h1>
+<%= page_name(@user.name) %>
 <p><%= link_to "All my drinks", drinks_path(author_id: @user.id, drink: true) %></p>
 <p><%= link_to "All my external drinks", drinks_path(author_id: @user.id, drink: false) %></p>
 <p><%= link_to "All my groups", groups_path(user_id: @user.id) %></p>
