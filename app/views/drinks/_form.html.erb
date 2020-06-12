@@ -1,0 +1,9 @@
+<%= form_for @drink do |f| %>
+  <%= f.label :name, value: 'Drink name:' %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :amount, value: 'Amount of drink you have (in militers)' %><br>
+  <%= f.number_field :amount, step: :any %><br>
+  <%= f.label :group_id, value: 'Add to group:' %><br>
+  <%= f.collection_select :group_id, @groups, :id, :name, include_blank: 'Select a group' %><br><br>
+  <%= f.submit 'Add new drink' %>
+<% end %>

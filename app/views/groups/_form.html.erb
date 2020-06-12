@@ -1,0 +1,7 @@
+<%= form_for @group do |f| %>
+  <%= f.label :name, value: 'Group name:' %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :icon, value: 'Link to icon:' %><br>
+  <%= f.text_field :icon %><br><br>
+  <%= f.submit "Create new group" %>
+<% end %>
