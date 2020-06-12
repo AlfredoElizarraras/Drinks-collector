@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
+    return nil if redirect_to_user(false)
     user = User.find(params[:user_id])
-    show_groups?(user)
+    return nil if redirect_to_user(user)
     @groups = Group.by_user(user.id)
   end
 
@@ -31,7 +34,10 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :icon)
   end
 
-  def show_groups?(user)
-    redirect_to root_path if user.nil?
+  def redirect_to_user(user = nil)
+    if user.nil? || params[:user_id].nil?
+      redirect_to user_path(current_user) 
+      return true
+    end
   end
 end

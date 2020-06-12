@@ -4,8 +4,9 @@ class DrinksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    author = User.find(params[:author_id])
-    show_drinks?(author)
+    return nil if redirect_to_user(false)
+    author = User.find_by_id(params[:author_id])
+    return nil if redirect_to_user(author)
     which_drinks_show(params[:drink] == 'true', author)
   end
 
@@ -33,10 +34,6 @@ class DrinksController < ApplicationController
     params.require(:drink).permit(:name, :amount, :group_id)
   end
 
-  def show_drinks?(author)
-    redirect_to root_path if author.nil? || !(params[:drink] != 'true' || params[:drink] != 'false')
-  end
-
   def which_drinks_show(drink, author)
     if drink
       @drinks = Drink.by_user(author.id)
@@ -46,6 +43,13 @@ class DrinksController < ApplicationController
       @drinks = Drink.by_user(author.id, false)
       @drinks_title = 'All my external drinks'
       @total_drinks = author.sum_drinks(false)
+    end
+  end
+
+  def redirect_to_user(author = nil)
+    if author.nil? || params[:author_id].nil?
+      redirect_to user_path(current_user) 
+      return true
     end
   end
 end
