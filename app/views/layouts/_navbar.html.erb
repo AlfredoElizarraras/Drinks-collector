@@ -1,0 +1,19 @@
+  <nav>
+    <div class="d-flex justify-content-between">
+      <%= link_to '', :back, class: 'fas fa-arrow-left' %>
+      <h1><%= yield(:title) %></h1>
+      <a class="btn btn-primary" data-toggle="collapse" href="#navMenu" role="button" aria-expanded="false" aria-controls="navMenu">
+        show
+      </a>
+    </div>
+    <% if current_user %>
+      <div class="collapse" id="navMenu">
+        <div>
+          <%= link_to current_user.name, current_user%>
+        </div>
+        <div>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        </div>
+      </div>    
+    <% end %>
+</nav>
