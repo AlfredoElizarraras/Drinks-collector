@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
+
 require 'rails_helper'
 
 RSpec.describe Drink, type: :model do
@@ -24,7 +26,7 @@ RSpec.describe Drink, type: :model do
     end
   end
 
-  context 'When an drink is created' do
+  context 'When a drink is created' do
     it 'Is not valid if doesn\'t have a name ' do
       drink.name = nil
       drink.amount = 760
@@ -52,5 +54,15 @@ RSpec.describe Drink, type: :model do
       drink.author_id = author.id
       expect(drink).to be_valid
     end
+
+    it 'It can belongs to a group' do
+      group = Group.create(name: 'Group test', icon: '', user_id: author.id)
+      drink.amount = 760
+      drink.name = 'Drink'
+      drink.author_id = author.id
+      drink.group_id = group.id
+      expect(drink).to be_valid
+    end
   end
 end
+# rubocop:enable Metrics/BlockLength

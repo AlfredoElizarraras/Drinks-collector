@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :drinks, dependent: :destroy, foreign_key: :author_id
   has_many :groups
+  validates :name, presence: true
 
   def sum_drinks(grouped = true)
     if grouped

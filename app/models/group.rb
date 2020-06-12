@@ -6,6 +6,6 @@ class Group < ApplicationRecord
   validates :name, presence: true
 
   scope :by_user, lambda { |user_id|
-    Group.where(user_id: user_id).order(name: :asc).includes(:drinks)
+    where(user_id: user_id).order(name: :asc).includes(:drinks)
   }
 end
