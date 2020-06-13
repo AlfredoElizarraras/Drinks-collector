@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-icons = %w(https://img.icons8.com/color/48/000000/wine-bottle.png 
-            https://img.icons8.com/cotton/64/000000/liquor-shelf--v2.png
-            https://img.icons8.com/ultraviolet/40/000000/coffee-pot.png
+icons = %w(https://img.icons8.com/color/100/000000/wine-bottle.png 
+            https://img.icons8.com/cotton/100/000000/liquor-shelf--v2.png
+            https://img.icons8.com/ultraviolet/100/000000/coffee-pot.png
             https://img.icons8.com/plasticine/100/000000/beer.png
-            https://img.icons8.com/ios/64/000000/vodka-shot.png
-            https://img.icons8.com/cute-clipart/64/000000/wine.png
-            https://img.icons8.com/dusk/64/000000/wine-glass.png
+            https://img.icons8.com/ios/100/000000/vodka-shot.png
+            https://img.icons8.com/cute-clipart/100/000000/wine.png
+            https://img.icons8.com/dusk/100/000000/wine-glass.png
             https://img.icons8.com/plasticine/100/000000/bottle-of-water.png
-            https://img.icons8.com/dusk/64/000000/juice-bottle.png
-            https://img.icons8.com/cotton/64/000000/soda-water--v1.png
+            https://img.icons8.com/dusk/100/000000/juice-bottle.png
+            https://img.icons8.com/cotton/100/000000/soda-water--v1.png
           )
 10.times do |index|
   u = User.create(name: "User #{index + 1}", email: "user_#{index + 1}@mail.com", password: '123456')
