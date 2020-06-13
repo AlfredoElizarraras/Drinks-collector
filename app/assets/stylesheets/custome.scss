@@ -13,5 +13,16 @@
   }
   a {
     color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
   }
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-width {
+   width: 100vw;
 }
