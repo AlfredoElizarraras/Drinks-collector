@@ -19,7 +19,7 @@
 
     <div class="flex__half d-flex flex-column justify-content-end card__info-bottom pb-2">
       <div class="d-flex justify-content-between">
-        <time><%= drink.created_at %></time>
+        <time><%= format_date(drink.created_at) %></time>
 
         <span>
           Created by:

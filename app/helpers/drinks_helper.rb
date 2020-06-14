@@ -17,4 +17,8 @@ module DrinksHelper
       render html: image_tag('no_group.png', class: html_class)
     end
   end
+
+  def format_date(date)
+    date.strftime('%d %B %Y')
+  end
 end
