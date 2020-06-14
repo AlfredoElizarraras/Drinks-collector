@@ -11,9 +11,11 @@
   </head>
 
   <body>
-  <%= render '/layouts/navbar' %>
-  <%= render '/layouts/errors' %>
-  
-  <%= yield %>
+    <%= render '/layouts/navbar' %>
+    <%= render '/layouts/errors' %>
+    
+    <div class="<%= html_class_main_div(yield(:title)) %>">
+      <%= yield %>
+    </div>
   </body>
 </html>

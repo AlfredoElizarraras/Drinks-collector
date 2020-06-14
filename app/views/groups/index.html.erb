@@ -1,9 +1,8 @@
 <%= page_name('All my groups') %>
-<% @groups.each do |group| %>
-  <article>
-    <%= show_group_icon(group) %>
-    <h2><%= link_to group.name, group %></h2>
-    <p><%= group.created_at %></p>
-  </article>
-<% end %>
-<%= link_to  "Create new", new_group_path %>
+
+<div class="mb-8">
+  <%= render partial: 'group', collection: @groups %>
+</div>
+
+<%= link_to  "Create new", new_group_path, class: 'position-fixed button__info component--stick-to-bottom btn btn-success' %>
+

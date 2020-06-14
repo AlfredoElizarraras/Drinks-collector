@@ -10,7 +10,7 @@ module DrinksHelper
   end
 
   def show_icon(drink)
-    html_class = 'img-fluid img-thumbnail p-2 m-2'
+    html_class = 'img-fluid card__image p-2 m-2'
     if !drink.group.nil?
       render html: image_tag(drink.group.icon, class: html_class) unless drink.group.icon.nil?
     else
