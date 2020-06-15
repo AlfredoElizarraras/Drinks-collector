@@ -23,11 +23,28 @@ class DrinksController < ApplicationController
     @drink.group_id = group.id unless group.nil?
 
     if @drink.save
-      redirect_to current_user
+      if @drink.group_id.nil?
+        redirect_to drinks_path(author_id: current_user.id, drink: false)
+      else
+        redirect_to drinks_path(author_id: current_user.id, drink: true)
+      end
     else
       flash.now[:error] = @drink.errors.full_messages
       @groups = current_user.groups
       render :new
+    end
+  end
+
+  def destroy
+    @drink = Drink.find_by_id(params[:id])
+    return if @drink.nil?
+
+    @drink.destroy
+    flash.notice = "Drink #{@drink.name} succesfully erased."
+    if @drink.group_id.nil?
+      redirect_to drinks_path(author_id: current_user.id, drink: false)
+    else
+      redirect_to drinks_path(author_id: current_user.id, drink: true)
     end
   end
 

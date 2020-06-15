@@ -23,11 +23,20 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
-      redirect_to current_user
+      redirect_to groups_path(user_id: current_user.id)
     else
       flash.now[:error] = @group.errors.full_messages
       render :new
     end
+  end
+
+  def destroy
+    @group = Group.find_by_id(params[:id])
+    return if @group.nil?
+
+    @group.destroy
+    flash.notice = "Group #{@group.name} succesfully destroyed!"
+    redirect_to groups_path(user_id: @user.id)
   end
 
   private
