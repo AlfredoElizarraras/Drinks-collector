@@ -1,21 +1,3 @@
-<h1><%= @group.name %></h1>
+<%= page_name(@group.name) %>
 
-<% @group.drinks.each do |drink| %>
-  <article>
-    <%= show_icon(drink) %>
-  
-    <h2>
-      <%= drink.name %>
-    </h2>
-    <h3>
-      Created by:
-      <%= drink.author.name %>
-    </h3>
-  
-    <p>
-      <%= drink.amount %>
-      <%= drink.created_at %>
-    </p>
-  
-  </article>
-<% end %>
+<%= render partial: '/shared/drink', collection: @group.drinks %>

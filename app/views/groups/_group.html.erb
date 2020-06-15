@@ -1,0 +1,28 @@
+<article class="card flex-row justify-content-bewteen my-4 mx-3 mb-2 card__info">
+  <%= show_group_icon(group) %>
+  
+  <div class="d-flex flex-column full-width pr-4">
+
+    <div class="flex__half d-flex flex-column justify-content-end">
+      <div class="d-flex flex-column justify-contet-bewteen">
+        <div class="d-flex justify-content-between align-items-end pb-2">
+          <h2 class="card__info-main m-0">
+            <%= link_to group.name, group %>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex__half d-flex flex-column justify-content-end card__info-bottom pb-2">
+      <div class="d-flex justify-content-between">
+        <time><%= format_date(group.created_at) %></time>
+
+        <span>
+          Created by:
+          <%= group.user.name %>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</article>

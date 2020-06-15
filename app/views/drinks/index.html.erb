@@ -1,22 +1,12 @@
-<h1><%= @drinks_title %></h1>
+<%= page_name(@drinks_title) %>
 
-<%= drinks_total %>
-<% @drinks.each do |drink| %>
-<article>
-  <%= show_icon(drink) %>
-  
-  <h2>
-    <%= drink.author.name %>
-  </h2>
-  <h3>
-    <%= drink.name %>
-  </h3>
+<div class="card justify-content-between align-items-center flex-row py-4 px-3 card__info">
+  <span class="card__info-main">Left to drink:</span>
+  <span class="card__info-main"><%= drinks_total(@total_drinks) %></span> 
+</div>
 
-  <p>
-    <%= drink.amount %>
-    <%= drink.created_at %>
-  </p>
+<div class="mb-8">
+  <%= render partial: '/shared/drink', collection: @drinks %>
+</div>
 
-</article>
-<% end %>
-<%= link_to  "Add new", new_drink_path %>
+<%= link_to  "Add new", new_drink_path, class: 'position-fixed button__info component--stick-to-bottom btn btn-success' %>

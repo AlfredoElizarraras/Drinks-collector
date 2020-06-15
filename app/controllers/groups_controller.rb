@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     user = User.find(params[:user_id])
     return nil if redirect_to_user(user)
 
-    @groups = Group.by_user(user.id)
+    @groups = Group.by_user(user.id).includes(:user)
   end
 
   def show
@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to current_user
     else
-      flash[:error] = @group.errors.full_messages
+      flash.now[:error] = @group.errors.full_messages
       render :new
     end
   end

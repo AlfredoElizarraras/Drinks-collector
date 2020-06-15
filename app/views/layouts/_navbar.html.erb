@@ -1,0 +1,34 @@
+  <%= return if !current_user.nil? && yield(:title) == current_user.name %>
+  
+  <nav class="navbar_custome position-fixed component--stick-to-top">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <%= link_to '', :back, class: 'fas fa-arrow-left' %>
+      <h1><%= yield(:title) %></h1>
+      <a class="fas fa-bars" data-toggle="collapse" href="#navMenu" role="button" aria-expanded="false" aria-controls="navMenu">
+      </a>
+    </div>
+
+    <% unless current_user.nil? %>
+      <div class="collapse" id="navMenu">
+        <div>
+          <%= link_to current_user.name, current_user%>
+        </div>
+        <div>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+    <% else %>
+      <div class="collapse" id="navMenu">
+        <% if yield(:title) == 'Sign up' %>
+          <div>
+            <%= link_to 'Log in', new_user_session_path%>
+          </div>
+        <% else %>
+          <div>
+            <%= link_to 'Sign up', new_user_registration_path %>
+          </div>
+       <% end %>
+      </div>
+    <% end %>
+  </nav>

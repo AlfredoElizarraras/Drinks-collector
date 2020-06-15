@@ -25,7 +25,8 @@ class DrinksController < ApplicationController
     if @drink.save
       redirect_to current_user
     else
-      flash[:error] = @drink.errors.full_messages
+      flash.now[:error] = @drink.errors.full_messages
+      @groups = current_user.groups
       render :new
     end
   end
