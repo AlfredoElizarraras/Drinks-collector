@@ -36,11 +36,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'confirm your password', class:'full-width' %>
   </div>
 
-  <div class="pl-4 mb-3">
+  <div class="pl-4 mb-8">
     <hr/>
   </div>
-
-  <%= render "devise/shared/omniauth" %>
 
   <%= f.submit "Sign up" , class: 'position-fixed button__info component--stick-to-bottom btn btn-success full-width' %>
 <% end %>
