@@ -3,7 +3,7 @@
   <div class="d-flex flex-column full-width">
     <div class="d-flex flex-column align-items-center">
       ​<picture class="user__picture d-flex justify-content-center align-items-center">
-        <img class="rounded-circle" src="https://www.flaticon.es/premium-icon/icons/svg/2400/2400780.svg"/>
+        <%= profile_image(@user) %>
       </picture>
       <h2 class="my-5"><%= current_user.name if @user.name == current_user.name %></h2>
     </div>

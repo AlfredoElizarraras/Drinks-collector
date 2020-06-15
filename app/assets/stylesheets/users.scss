@@ -16,8 +16,8 @@
   div {
     .user__picture {
       border-radius: 50%;
-      height: 10em;
-      width: 10em;
+      max-height: 10em;
+      max-width: 10em;
     }
     h2 {
       color: #fff;
