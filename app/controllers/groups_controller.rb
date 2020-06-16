@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     user = User.find(params[:user_id])
     return nil if redirect_to_user(user)
 
-    @groups = Group.by_user(user.id).includes(:user)
+    @groups = Group.by_user(user.id).includes(:user).with_attached_image
   end
 
   def show

@@ -13,12 +13,10 @@ module DrinksHelper
     html_class = 'img-fluid card__image p-2 m-2'
     if drink.group.nil?
       render html: image_tag('no_group.png', class: html_class)
+    elsif drink.group.image.attached?
+      render html: image_tag(drink.group.display_image, class: html_class)
     else
-      if drink.group.image.attached?
-        render html: image_tag(drink.group.image, class: html_class)
-      else
-        render html: image_tag('no_group_icon', class: html_class)
-      end
+      render html: image_tag('no_group_icon', class: html_class)
     end
   end
 

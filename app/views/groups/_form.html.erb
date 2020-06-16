@@ -8,9 +8,9 @@
     <hr/>
   </div>
 
-  <% if !current_user.provider.nil? %>
+  <% if current_user.provider.nil? %>
     <div class="d-flex py-2 px-4 custom-file">
-      <%= f.file_field :image, class: 'custom-file-field' %>
+      <%= f.file_field :image, class: 'custom-file-field', accept: "image/jpeg,image/gif,image/png" %>
     </div>
 
     <div class="pl-4 mb-8">
