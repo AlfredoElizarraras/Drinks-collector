@@ -26,9 +26,11 @@
     </div>
   <% end %>
 
-  <div class="pl-4 mb-8">
+  <div class="pl-4 mb-3">
     <hr/>
   </div>
+
+  <%= render "devise/shared/omniauth" %>
 
   <%= f.submit "Log in", class: 'position-fixed button__info component--stick-to-bottom btn btn-success full-width' %>
 <% end %>

@@ -12,4 +12,22 @@ module ApplicationHelper
       'mt-8'
     end
   end
+
+  def provider_name(provider)
+    if provider == 'google_oauth2'
+      'google'
+    else
+      provider
+    end
+  end
+
+  def provider_order(provider)
+    if provider == 'facebook'
+      1
+    elsif provider == 'google_oauth2'
+      2
+    elsif provider == 'github'
+      3
+    end
+  end
 end

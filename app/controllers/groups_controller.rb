@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     user = User.find(params[:user_id])
     return nil if redirect_to_user(user)
 
-    @groups = Group.by_user(user.id).includes(:user)
+    @groups = Group.by_user(user.id).includes(:user).with_attached_image
   end
 
   def show
@@ -23,17 +23,27 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
-      redirect_to current_user
+      @group.image.attach(params[:group][:image]) if @group.image.attached?
+      redirect_to groups_path(user_id: current_user.id)
     else
       flash.now[:error] = @group.errors.full_messages
       render :new
     end
   end
 
+  def destroy
+    @group = Group.find_by_id(params[:id])
+    return if @group.nil?
+
+    @group.destroy
+    flash.notice = "Group #{@group.name} succesfully destroyed!"
+    redirect_to groups_path(user_id: current_user.id)
+  end
+
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :image)
   end
 
   def redirect_to_user(user = nil)
