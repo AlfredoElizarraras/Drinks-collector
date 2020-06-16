@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
+      @group.image.attach(params[:group][:image]) if @group.image.attached?
       redirect_to groups_path(user_id: current_user.id)
     else
       flash.now[:error] = @group.errors.full_messages
@@ -36,13 +37,13 @@ class GroupsController < ApplicationController
 
     @group.destroy
     flash.notice = "Group #{@group.name} succesfully destroyed!"
-    redirect_to groups_path(user_id: @user.id)
+    redirect_to groups_path(user_id: current_user.id)
   end
 
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :image)
   end
 
   def redirect_to_user(user = nil)

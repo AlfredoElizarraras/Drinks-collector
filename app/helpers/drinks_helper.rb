@@ -11,10 +11,14 @@ module DrinksHelper
 
   def show_icon(drink)
     html_class = 'img-fluid card__image p-2 m-2'
-    if !drink.group.nil?
-      render html: image_tag(drink.group.icon, class: html_class) unless drink.group.icon.nil?
-    else
+    if drink.group.nil?
       render html: image_tag('no_group.png', class: html_class)
+    else
+      if drink.group.image.attached?
+        render html: image_tag(drink.group.image, class: html_class)
+      else
+        render html: image_tag('no_group_icon', class: html_class)
+      end
     end
   end
 
