@@ -9,18 +9,18 @@ You can found a video of the app [here](https://youtu.be/U3tEV4eN9vA) you have t
 ## Screen shots
 
 - App screens:
-![Login](/public/assets/images/login.jpeg?raw=true "Login")
-![Sign up](/public/assets/images/sign_up.jpeg?raw=true "Sign up")
-![Profile page](/public/assets/images/user_profile.jpeg?raw=true "Profile page")
-![Profile page 1](/public/assets/images/user_profile_1.jpeg?raw=true "Profile page 1")
-![All my drinks](/public/assets/images/all_my_drinks.jpeg?raw=true "All my drinks")
-![All my external drinks](/public/assets/images/all_my_external_drinks.jpeg?raw=true "All my external drinks")
-![Drink deletion](/public/assets/images/drink_deletion.jpeg?raw=true "Drink deletion")
-![Add new drink](/public/assets/images/add_new_drink.jpeg?raw=true "Add new drink")
-![All my groups](/public/assets/images/all_my_groups.jpeg?raw=true "All my groups")
-![Add new group](/public/assets/images/add_new_group.jpeg?raw=true "Add new group")
-![All my groups 1](/public/assets/images/all_my_groups_1.jpeg?raw=true "All my groups 1")
-![Select a group](/public/assets/images/select_a_group.jpeg?raw=true "Select a group")
+![Login](/assets/images/login.jpeg?raw=true "Login")
+![Sign up](/assets/images/sign_up.jpeg?raw=true "Sign up")
+![Profile page](/assets/images/user_profile.jpeg?raw=true "Profile page")
+![Profile page 1](/assets/images/user_profile_1.jpeg?raw=true "Profile page 1")
+![All my drinks](/assets/images/all_my_drinks.jpeg?raw=true "All my drinks")
+![All my external drinks](/assets/images/all_my_external_drinks.jpeg?raw=true "All my external drinks")
+![Drink deletion](/assets/images/drink_deletion.jpeg?raw=true "Drink deletion")
+![Add new drink](/assets/images/add_new_drink.jpeg?raw=true "Add new drink")
+![All my groups](/assets/images/all_my_groups.jpeg?raw=true "All my groups")
+![Add new group](/assets/images/add_new_group.jpeg?raw=true "Add new group")
+![All my groups 1](/assets/images/all_my_groups_1.jpeg?raw=true "All my groups 1")
+![Select a group](/assets/images/select_a_group.jpeg?raw=true "Select a group")
 
 
 ## Project management
