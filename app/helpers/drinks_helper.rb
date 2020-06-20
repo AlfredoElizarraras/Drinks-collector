@@ -25,21 +25,22 @@ module DrinksHelper
   end
 
   def drink_delete_icon(user_id, drink)
-    if current_user.id == user_id
-      render html: link_to("X", drink_path(drink), method: :delete,
-      data: { confirm: "Are you sure to erase #{drink.name} drink?" },
-      class: 'position-absolute postion-top position-right px-1 erase-button')
-    end
+    return if current_user.id != user_id
+
+    render html: link_to('X', drink_path(drink), method: :delete,
+                                                 data: { confirm: "Are you sure to erase #{drink.name} drink?" },
+                                                 class: 'position-absolute postion-top position-right
+                                                     px-1 erase-button')
   end
 
   def drink_page(page)
     cookies[:drinks_page] = page
   end
 
-  def select_group(f)
-    if !cookies[:drinks_page].nil? && cookies[:drinks_page] == 'All my drinks'
-      render html: f.collection_select(:group_id, @groups || [], :id, :name, 
-      { include_blank: 'Add to group:' },{ class: 'full-width' })
-    end
+  def select_group(form)
+    return if cookies[:drinks_page].nil? || cookies[:drinks_page] != 'All my drinks'
+
+    render html: form.collection_select(:group_id, @groups || [], :id, :name,
+                                        { include_blank: 'Add to group:' }, { class: 'full-width' })
   end
 end

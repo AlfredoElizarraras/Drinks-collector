@@ -11,10 +11,11 @@ module GroupsHelper
   end
 
   def group_delete_icon(user_id, group)
-    if current_user.id == user_id
-      render html:  link_to("X", group_path(group), method: :delete, 
-      data: { confirm: "Are you sure to erase #{group.name} group?" },
-      class: 'position-absolute postion-top position-right px-1 erase-button')
-    end
+    return if current_user.id != user_id
+
+    render html: link_to('X', group_path(group), method: :delete,
+                                                 data: { confirm: "Are you sure to erase #{group.name} group?" },
+                                                 class: 'position-absolute postion-top position-right px-1
+                                                    erase-button')
   end
 end
