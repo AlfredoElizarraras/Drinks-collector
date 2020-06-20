@@ -31,4 +31,15 @@ module DrinksHelper
       class: 'position-absolute postion-top position-right px-1 erase-button')
     end
   end
+
+  def drink_page(page)
+    cookies[:drinks_page] = page
+  end
+
+  def select_group(f)
+    if !cookies[:drinks_page].nil? && cookies[:drinks_page] == 'All my drinks'
+      render html: f.collection_select(:group_id, @groups || [], :id, :name, 
+      { include_blank: 'Add to group:' },{ class: 'full-width' })
+    end
+  end
 end
