@@ -1,7 +1,5 @@
 <article class="card flex-row justify-content-bewteen my-4 mx-3 mb-2 card__info position-relative">
-  <%= link_to  "X", drink_path(drink), method: :delete,
-  data: { confirm: "Are you sure to erase #{drink.name} drink?" },
-  class: 'position-absolute postion-top position-right px-1 erase-button' %>
+  <%= drink_delete_icon(drink.author_id, drink) %>
 
   <%= show_icon(drink) %>
   
