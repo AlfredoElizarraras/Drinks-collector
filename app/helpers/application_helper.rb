@@ -30,4 +30,16 @@ module ApplicationHelper
       3
     end
   end
+
+  def nav_session_link(title)
+    if title == 'Sign up'
+      render html: link_to('Log in', new_user_session_path)
+    else
+      render html: link_to('Sign up', new_user_registration_path)
+    end
+  end
+
+  def profile_page?(title)
+    !current_user.nil? && title == current_user.name
+  end
 end

@@ -1,4 +1,4 @@
-  <%= return if !current_user.nil? && yield(:title) == current_user.name %>
+  <%= return if profile_page?(yield(:title)) %>
   
   <nav class="navbar_custome position-fixed component--stick-to-top">
 
@@ -20,15 +20,9 @@
       </div>
     <% else %>
       <div class="collapse" id="navMenu">
-        <% if yield(:title) == 'Sign up' %>
-          <div>
-            <%= link_to 'Log in', new_user_session_path%>
-          </div>
-        <% else %>
-          <div>
-            <%= link_to 'Sign up', new_user_registration_path %>
-          </div>
-       <% end %>
+        <div>
+          <%= nav_session_link(yield(:title)) %>
+        </div>
       </div>
     <% end %>
   </nav>
