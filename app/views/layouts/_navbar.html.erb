@@ -3,7 +3,7 @@
   <nav class="navbar_custome position-fixed component--stick-to-top">
 
     <div class="d-flex justify-content-between align-items-center">
-      <%= link_to '', :back, class: 'fas fa-arrow-left' %>
+      <%= link_to '', 'javascript:history.go(-1);', class: 'fas fa-arrow-left' %>
       <h1><%= yield(:title) %></h1>
       <a class="fas fa-bars" data-toggle="collapse" href="#navMenu" role="button" aria-expanded="false" aria-controls="navMenu">
       </a>
