@@ -1,10 +1,14 @@
 # Drinks collector
 
-> This app keeps track of your and yours friends drinks. It's purpose is to showcase all what I have learned in the Microverse course curriculum.
+> This app keeps track of you and your friends drinks. It's purpose is to showcase all what I have learned in the Microverse course curriculum.
 
 ## Video presentation
 
-You can found a video of the app [here](https://youtu.be/U3tEV4eN9vA) you have to sign in on youtube to see the video.
+You can find the video of the app [here](https://youtu.be/U3tEV4eN9vA) you have to sign in on youtube to see the video.
+
+## App diagram
+
+![ERD](/assets/images/Drinks_diagram.jpg?raw=true "ERD")
 
 ## Screen shots
 
@@ -150,15 +154,10 @@ Give a ⭐️ if you like this project!
 - [Odin project](https://www.theodinproject.com/)
 - I took the idea of this app from [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) from his awsome design [Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 - The whole project requirements, came from microverse capstone project in [notion: group our transactions](https://www.notion.so/Group-our-transactions-ccea2b6642664540a70de9f30bdff4ce)
-- I took the icon for user that are not using Oauth for authentication from [Freepik](https://www.freepik.es/) from [Flaticons](www.flaticon.com)
-- I took the coffe pot used in drinks that do not have group from [Icons8](https://icons8.com/icon/7MUjnaAzwfnb/olla-llena-de-café)
-- I took the liquor rack used for All my drinks from [Icons8](https://icons8.com/icon/88540/estante-de-licor)
-- I took the liquor rack used for All my external drinks from [Icons8](https://icons8.com/icon/81813/estante-de-licor)
-- I took the cards used for All my groups from [Icons8](https://icons8.com/icon/8U_3maW-Xaqf/etiquetas)
-- I took the bed used for sign out from [Icons8](https://icons8.com/icon/10786/sufrir-insomnio)
-- I took the glass of water used for groups created by the users that do not give an image from [Icons8](https://icons8.com/icon/97320/agua-con-gas)
-- I took the back row used in the nav bar from [fontawsome](https://fontawesome.com/icons/arrow-left?style=solid)
-- I took the bars menu used in the nav bar from [fontawesome](https://fontawesome.com/icons/bars?style=solid)
+- The icons I used, are from the next resources:
+  - [Flaticons](www.flaticon.com)
+  - [Icons 8](https://icons8.com/)
+  - [Fontawesome](https://fontawesome.com/)
 - I took the font used in the entire app from [google fonts](https://fonts.google.com/specimen/Ibarra+Real+Nova?query=Nova)
 
 ---
