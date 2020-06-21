@@ -2,7 +2,7 @@
 
 class Group < ApplicationRecord
   has_one_attached :image, dependent: :destroy
-  has_many :drinks, dependent: :nullify
+  has_many :drinks, dependent: :delete_all
   belongs_to :user
   validates :name, presence: true
   validates :image, content_type: { in: %w[image/jpeg image/gif image/png],

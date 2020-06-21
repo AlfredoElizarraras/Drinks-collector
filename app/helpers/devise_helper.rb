@@ -9,4 +9,8 @@ module DeviseHelper
       form.password_field(:password, autocomplete: 'new-password', placeholder: 'password')
     end
   end
+
+  def rememberable(form)
+    render(partial: '/devise/sessions/rememberable', locals: { f: form }) if devise_mapping.rememberable?
+  end
 end

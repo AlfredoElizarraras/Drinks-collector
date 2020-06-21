@@ -40,7 +40,6 @@ module DrinksHelper
   def select_group(form)
     return if cookies[:drinks_page].nil? || cookies[:drinks_page] != 'All my drinks'
 
-    render html: form.collection_select(:group_id, @groups || [], :id, :name,
-                                        { include_blank: 'Add to group:' }, { class: 'full-width' })
+    render html: form.collection_select(:group_id, @groups || [], :id, :name, class: 'full-width')
   end
 end

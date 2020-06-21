@@ -42,4 +42,12 @@ module ApplicationHelper
   def profile_page?(title)
     !current_user.nil? && title == current_user.name
   end
+
+  def nav_links
+    if current_user.nil?
+      render(partial: '/layouts/unlogged_links')
+    else
+      render(partial: '/layouts/logged_links')
+    end
+  end
 end
