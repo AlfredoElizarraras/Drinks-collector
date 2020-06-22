@@ -1,0 +1,8 @@
+<%= page_name('All my groups') %>
+
+<div class="mb-8">
+  <%= render partial: 'group', collection: @groups %>
+</div>
+
+<%= link_to  "Create new", new_group_path, class: 'position-fixed button__info component--stick-to-bottom btn btn-success' %>
+

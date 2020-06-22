@@ -1,0 +1,25 @@
+<%= form_for(@drink, html: { class: 'd-flex flex-column full-height mt-10' }) do |f| %>
+
+  <div class="d-flex py-2 px-4">
+    <%= f.text_field :name, placeholder: 'Drink name' %>
+  </div>
+
+  <div class="pl-4">
+    <hr/>
+  </div>
+
+  <div class="d-flex py-2 px-4">
+    <%= f.label :amount, value: 'Bottle size (in militers)' %><br>
+    <%= f.number_field :amount, min: 0, step: :any, placeholder: 355 %>
+  </div>
+
+  <div class="pl-4">
+    <hr/>
+  </div>
+
+  <div class="d-flex py-2 px-4 mb-8">
+     <%= select_group(f) %>
+  </div>
+
+  <%= f.submit 'Add new drink', class: 'position-fixed button__info component--stick-to-bottom btn btn-success full-width' %>
+<% end %>

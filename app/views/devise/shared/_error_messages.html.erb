@@ -1,0 +1,12 @@
+<% if resource.errors.any? %>
+  <nav id="" class="nav-errors">
+    <h3>
+      Some errors appear
+    </h3>
+    <% resource.errors.full_messages.each do |message| %>
+      <div class="error_explanation">
+        <%= message %>
+      </div>
+    <% end %>
+  </nav>
+<% end %>

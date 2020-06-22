@@ -1,0 +1,10 @@
+<% return if flash[:error].nil? %>
+
+<nav class="nav-errors">
+  <h3>Some errors appear!!</h3>
+  <% flash[:error].each do |error| %>
+    <div class="card error_explanation">
+      <%= error %>
+    </div><br>
+  <% end %>
+</nav>

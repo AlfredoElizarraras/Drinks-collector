@@ -1,0 +1,12 @@
+<%= page_name(@drinks_title) %>
+
+<div class="card justify-content-between align-items-center flex-row py-4 px-3 card__info">
+  <span class="card__info-main">Left to drink:</span>
+  <span class="card__info-main"><%= drinks_total(@total_drinks) %></span> 
+</div>
+
+<div class="mb-8">
+  <%= render partial: '/shared/drink', collection: @drinks %>
+</div>
+
+<%= link_to  "Add new", new_drink_path, class: 'position-fixed button__info component--stick-to-bottom btn btn-success' %>

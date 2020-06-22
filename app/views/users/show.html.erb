@@ -1,0 +1,76 @@
+<%= page_name(@user.name) %>
+<div class="user-main-container d-flex full-height full-width justify-content-center">
+  <div class="d-flex flex-column full-width">
+    <div class="d-flex flex-column align-items-center">
+      ​<picture class="user__picture d-flex justify-content-center align-items-center">
+        <%= profile_image(@user) %>
+      </picture>
+      <%= user_name %>
+    </div>
+
+    <div class="d-flex flex-column align-items-center">
+     <div class="d-flex flex-column">
+      <div class="d-flex align-items-center">
+        <picture class="menu-item__picture d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="64" height="64"
+          viewBox="0 0 172 172"
+          style=" fill:#3778c2;">
+            <g transform="">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="">
+            </path>
+            <g fill="#FFF">
+            <path d="M51.6,11.46667v11.46667h17.2v-11.46667zM103.2,28.66667v11.46667h17.2v-11.46667zM51.6,34.4v17.2l-8.10729,8.10729c-2.15,2.15 -3.35937,5.06863 -3.35937,8.10729v46.85208c0,6.33533 5.13133,11.46667 11.46667,11.46667h17.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-11.46667h-11.46667v-22.93333h11.46667v-12.45208c0,-3.03867 -1.20937,-5.95729 -3.35938,-8.10729l-8.10729,-8.10729v-17.2zM103.2,51.6v11.46667l-8.10729,8.10729c-2.15,2.15 -3.35938,5.06863 -3.35938,8.10729v35.38542c0,6.33533 5.13133,11.46667 11.46667,11.46667h17.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-5.73333h-22.93333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333v-11.46667c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333h22.93333v-6.71875c0,-3.03867 -1.20938,-5.95729 -3.35938,-8.10729l-8.10729,-8.10729v-11.46667zM28.66667,137.6c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h114.66667c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843z">
+            </path>
+            </g>
+            </g>
+            </g>
+          </svg>
+        </picture>
+        <p class="menu-item__paragraph">
+          <%= link_to "All my drinks", drinks_path(author_id: @user.id, drink: true),
+           class: 'user__links' %>
+        </p>
+      </div>
+      <div class="d-flex align-items-center mt-3">
+        <picture class="menu-item__picture d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="64" height="64"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFF"><path d="M107.5,21.5v21.5c0,6.27083 -3.23035,11.95272 -7.15967,17.84668c-3.92932,5.89399 -8.96533,11.71582 -8.96533,19.77832c-0.00003,0.0105 -0.00003,0.02099 0,0.03149c0.00298,0.4612 -0.00205,4.21333 0,5.34351v37.625c-0.003,6.7045 0.00131,13.86342 0,16.125h-10.75v-53.75c0,-8.53399 -4.53113,-15.60273 -10.75,-20.50268v-33.24732h-32.25v33.24732c-6.21887,4.89996 -10.75,11.96869 -10.75,20.50268v53.75h-10.75v10.75h10.75h53.75h75.25v-10.75h-10.75c-0.00421,-2.24973 0.00962,-9.44162 0,-16.125v-37.625c0.00654,-1.12351 -0.00943,-4.79159 0,-5.27002c0.00034,-0.03499 0.00034,-0.06999 0,-0.10498c0,-8.0625 -5.03601,-13.88433 -8.96533,-19.77832c-3.92932,-5.89397 -7.15967,-11.57584 -7.15967,-17.84668v-21.5h-10.75zM48.375,43h10.75v10.75h-10.75zM116.30786,53.75h3.88428c1.78775,4.99504 4.52848,9.31749 7.0232,13.05957c4.13318,6.19977 7.15967,11.12793 7.15967,13.81543h-32.25c0,-2.6875 3.02649,-7.61567 7.15967,-13.81543c2.49472,-3.74208 5.23544,-8.06453 7.0232,-13.05957zM48.375,64.5h10.75v6.07837l2.677,1.55371c4.83913,2.81572 8.073,7.89175 8.073,13.86792h-32.25c0,-5.97617 3.23387,-11.0522 8.073,-13.86792l2.677,-1.55371zM102.125,91.375h32.25v26.875h-32.25zM37.625,96.75h32.25v16.125h-32.25zM37.625,123.625h32.25v16.125h-32.25zM102.125,129h32.25c0.00751,3.41833 -0.00342,9.28296 0,10.75h-32.25c0.00095,-1.49421 -0.00209,-7.26596 0,-10.75z"></path></g></g>
+          </svg>
+        </picture>
+        <p class="menu-item__paragraph">
+          <%= link_to "All my external drinks", drinks_path(author_id: @user.id, drink: false),
+              class: 'user__links' %>
+        </p>
+      </div>
+      <div class="d-flex align-items-center mt-3 mb-3">
+        <picture class="menu-item__picture d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="64" height="64"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M48.16,24.08l-41.28,41.28v68.8h144.48v-110.08zM48.16,33.80875v31.55125h-31.55125zM161.62625,37.79297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v99.76h-134.16c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h141.04v-106.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></g>
+          </svg>
+        </picture>
+        <p class="menu-item__paragraph">
+         <%= link_to "All my groups", groups_path(user_id: @user.id), class: 'user__links' %>
+        </p>
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <picture class="menu-item__picture d-flex justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="60" height="60"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M34.4,27.52c-9.63469,0 -17.2,7.56531 -17.2,17.2c0,9.63469 7.56531,17.2 17.2,17.2c9.63469,0 17.2,-7.56531 17.2,-17.2c0,-9.63469 -7.56531,-17.2 -17.2,-17.2zM10.32,58.48c-5.84531,0 -10.32,4.47469 -10.32,10.32v103.2h20.64v-17.2h130.72v17.2h20.64v-41.28h-151.36v-61.92c0,-5.84531 -4.47469,-10.32 -10.32,-10.32zM34.4,65.36c-3.09062,0 -5.88562,1.35719 -7.955,3.7625c-2.06937,2.40531 -2.71437,5.50938 -2.365,8.6l8.6,39.2375c0.68531,2.75469 1.72,4.81063 3.44,6.88h22.36v-38.485l-1.3975,-6.5575c-1.72,-7.91469 -8.62687,-13.4375 -16.8775,-13.4375zM65.36,89.44v34.4h106.64v-17.2c0,-9.63469 -7.56531,-17.2 -17.2,-17.2z"></path></g></g>
+          </svg>
+        </picture>
+        <p>
+         <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'user__links' %>
+        </p>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
