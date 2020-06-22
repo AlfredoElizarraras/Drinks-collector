@@ -2,6 +2,7 @@
 
 class DrinksController < ApplicationController
   before_action :authenticate_user!
+  include DrinksHelper
 
   def index
     return nil if redirect_to_user(false)
@@ -58,10 +59,12 @@ class DrinksController < ApplicationController
     if drink
       @drinks = Drink.by_user(author.id)
       @drinks_title = 'All my drinks'
+      drink_page('All my drinks')
       @total_drinks = author.sum_drinks
     else
       @drinks = Drink.by_user(author.id, false)
       @drinks_title = 'All my external drinks'
+      drink_page('All my external drinks')
       @total_drinks = author.sum_drinks(false)
     end
   end

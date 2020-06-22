@@ -9,4 +9,8 @@ module UsersHelper
       render html: image_tag(user.gravatar_url, alt: "#{user.name} profile image", class: 'rounded-circle')
     end
   end
+
+  def user_name
+    render(partial: 'username', locals: { username: @user.name }) if @user.name == current_user.name
+  end
 end

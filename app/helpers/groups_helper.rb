@@ -9,4 +9,13 @@ module GroupsHelper
       render html: image_tag('no_group_icon.png', class: html_class)
     end
   end
+
+  def group_delete_icon(user_id, group)
+    return if current_user.id != user_id
+
+    render html: link_to('X', group_path(group), method: :delete,
+                                                 data: { confirm: "Are you sure to erase #{group.name} group?" },
+                                                 class: 'position-absolute postion-top position-right px-1
+                                                    erase-button')
+  end
 end

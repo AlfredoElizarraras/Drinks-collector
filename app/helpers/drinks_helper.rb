@@ -2,7 +2,7 @@
 
 module DrinksHelper
   def drinks_total(total)
-    if total > 1000
+    if total >= 1000
       "#{total / 1000}L"
     else
       "#{total}ml"
@@ -22,5 +22,24 @@ module DrinksHelper
 
   def format_date(date)
     date.strftime('%d %B %Y')
+  end
+
+  def drink_delete_icon(user_id, drink)
+    return if current_user.id != user_id
+
+    render html: link_to('X', drink_path(drink), method: :delete,
+                                                 data: { confirm: "Are you sure to erase #{drink.name} drink?" },
+                                                 class: 'position-absolute postion-top position-right
+                                                     px-1 erase-button')
+  end
+
+  def drink_page(page)
+    cookies[:drinks_page] = page
+  end
+
+  def select_group(form)
+    return if cookies[:drinks_page].nil? || cookies[:drinks_page] != 'All my drinks'
+
+    render html: form.collection_select(:group_id, @groups || [], :id, :name, class: 'full-width')
   end
 end

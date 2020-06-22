@@ -52,7 +52,6 @@ RSpec.feature 'Users', type: :feature do
         fill_in 'group_name', with: 'Group test'
       end
       click_button 'Create new group'
-      click_link 'All my groups'
       expect(page).to have_content('Group test')
     end
   end
@@ -80,7 +79,6 @@ RSpec.feature 'Users', type: :feature do
         select('Group test', from: 'drink_group_id')
       end
       click_button 'Add new drink'
-      click_link 'All my drinks'
       expect(page).to have_content('drink test')
     end
 
@@ -93,7 +91,6 @@ RSpec.feature 'Users', type: :feature do
         fill_in 'drink_amount', with: 760
       end
       click_button 'Add new drink'
-      click_link 'All my external drinks'
       expect(page).to have_content('drink test')
     end
 

@@ -1,7 +1,5 @@
 <article class="card flex-row justify-content-bewteen my-4 mx-3 mb-2 card__info position-relative">
-  <%= link_to  "X", group_path(group), method: :delete, 
-  data: { confirm: "Are you sure to erase #{group.name} group?" },
-  class: 'position-absolute postion-top position-right px-1 erase-button' %>
+  <%= group_delete_icon(group.user.id, group) %>
 
   <%= show_group_icon(group) %>
   
