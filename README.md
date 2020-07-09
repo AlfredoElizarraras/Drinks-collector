@@ -96,7 +96,7 @@ bundle install
 ## Usage
 
 > Notes for development
-1. As this is a web app is better to test it in a mobile, for this you can use [ngrok](https://ngrok.com/).
+1. As this is a web app is better to test it on a mobile, for this you can use [ngrok](https://ngrok.com/).
 In ngrok page follow the instructions to download it for your own specific OS, then you can follow this [cool post](https://dev.to/ianvaughan/ngrok-on-rails-315m) that I followed in order to have ngrok running for development.
 So you can do the following:
    1. Start ngrok in the console (in the folder directory you download and extract ngrok)
@@ -110,12 +110,12 @@ So you can do the following:
    ```
        rails server
    ```
-   3. Now you have to be able to visit ngrok given url in your mobile phone.
+   3. Now you have to be able to visit the ngrok given URL on your mobile phone.
       OR
 
       Open `http://localhost:3000/` in your browser.
 
-2. For testing omniauth authentication is better if you use another deployment site or use github as it is the only one of the three providers that accepts call backs for local host 3000
+2. For testing, omniauth authentication is better if you use another deployment site or use GitHub as it is the only one of the three providers that accept callback for localhost 3000
 
 ## Run automated tests
 
@@ -125,13 +125,13 @@ So you can do the following:
 ```
 ### Deployment
 
-- Change 'xyz' part so you have your own Drinks collector app deployed.
+- Change the 'xyz' part so you have your own Drinks collector app deployed.
 ```
  heroku create drinks-collector-xyz
  git push heroku +HEAD:master
  heroku run rails db:migrate
 ```
-- To manage Enviroment variables I used [Figaro gem](https://github.com/laserlemon/figaro), so you can push the variables to heroku as in the figaros gem documentation
+- To manage Environment variables I used [Figaro gem](https://github.com/laserlemon/figaro), so you can push the variables to Heroku as in the Figaros gem documentation
 ```
  figaro heroku:set -e production
 ```
